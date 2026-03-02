@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Supplemental and health insurance for individuals and families in Huntington Beach & Orange County. Learn how Arens Insurance Services protects what matters most.">
+  <title>For Individuals & Families | Arens Insurance Services</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Page-specific extras */
+    .scenario-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:28px; }
+    .scenario-card { background:#fff; border-radius:16px; padding:32px; box-shadow:0 4px 20px rgba(11,31,58,.08); border-top:4px solid var(--amber); }
+    .scenario-icon { font-size:2.2rem; margin-bottom:16px; }
+    .scenario-card h3 { font-size:1.15rem; color:var(--navy); margin-bottom:10px; }
+    .scenario-card p { color:var(--text-medium); font-size:.95rem; line-height:1.65; margin-bottom:16px; }
+    .scenario-outcome { background:var(--cream); border-radius:8px; padding:14px 18px; font-size:.88rem; color:var(--navy); font-weight:600; }
+    .scenario-outcome span { display:block; font-weight:400; color:var(--text-medium); margin-top:4px; }
+
+    .how-works { background:var(--navy); color:#fff; padding:80px 0; }
+    .how-works h2 { color:#fff; text-align:center; }
+    .how-works .section-sub { color:rgba(255,255,255,.7); text-align:center; max-width:640px; margin:0 auto 56px; }
+    .steps-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:32px; }
+    .step-card { text-align:center; }
+    .step-num { width:56px; height:56px; border-radius:50%; background:var(--amber); color:var(--navy); font-size:1.4rem; font-weight:800; display:flex; align-items:center; justify-content:center; margin:0 auto 20px; }
+    .step-card h4 { color:#fff; font-size:1.05rem; margin-bottom:8px; }
+    .step-card p { color:rgba(255,255,255,.65); font-size:.9rem; line-height:1.6; }
+
+    .coverage-compare { background:#fff; padding:80px 0; }
+    .compare-table { width:100%; border-collapse:collapse; margin-top:32px; font-size:.92rem; }
+    .compare-table th { background:var(--navy); color:#fff; padding:16px 20px; text-align:left; }
+    .compare-table th:first-child { border-radius:12px 0 0 0; }
+    .compare-table th:last-child { border-radius:0 12px 0 0; text-align:center; }
+    .compare-table td { padding:14px 20px; border-bottom:1px solid #e8e2d9; color:var(--text-dark); }
+    .compare-table td:last-child { text-align:center; }
+    .compare-table tr:last-child td { border-bottom:none; }
+    .compare-table tr:nth-child(even) td { background:#faf7f2; }
+    .check-yes { color:#1a7a4a; font-size:1.2rem; font-weight:700; }
+    .check-no { color:#c0392b; font-size:1.2rem; }
+    .check-partial { color:#c8941a; font-size:1.2rem; }
+    @media(max-width:700px){ .compare-table { display:block; overflow-x:auto; } }
+
+    .faq-individual { background:var(--cream); padding:80px 0; }
+    .faq-list { max-width:760px; margin:0 auto; }
+    .faq-item { background:#fff; border-radius:12px; margin-bottom:12px; overflow:hidden; box-shadow:0 2px 8px rgba(11,31,58,.06); }
+    .faq-q { padding:20px 24px; cursor:pointer; display:flex; justify-content:space-between; align-items:center; font-weight:600; color:var(--navy); font-size:.95rem; }
+    .faq-q svg { flex-shrink:0; transition:transform .3s; }
+    .faq-q.open svg { transform:rotate(180deg); }
+    .faq-a { max-height:0; overflow:hidden; transition:max-height .35s ease, padding .35s; padding:0 24px; color:var(--text-medium); font-size:.92rem; line-height:1.7; }
+    .faq-a.open { max-height:300px; padding:0 24px 20px; }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo">
+      <span class="nav-logo-name">Arens Insurance</span>
+      <span class="nav-logo-tagline">Huntington Beach, CA</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="individuals.html" class="active">For Individuals</a>
+      <a href="businesses.html">For Businesses</a>
+      <a href="contact.html" class="nav-cta">Schedule Free Consult</a>
+    </div>
+    <button class="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="container">
+    <div class="page-hero-content animate-fade-up">
+      <span class="hero-eyebrow">For Individuals &amp; Families</span>
+      <h1>Your Health Insurance<br><em>Has a Gap. Let's Fill It.</em></h1>
+      <p>Most health plans cover your medical bills — but not the lost income, out-of-pocket costs, or daily expenses that pile up when you're sick or hurt. That's where supplemental insurance comes in.</p>
+      <div class="btn-group">
+        <a href="contact.html" class="btn btn-primary btn-lg">Get Free Consultation</a>
+        <a href="tel:7149632428" class="btn btn-outline btn-lg">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.28h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.29 6.29l.54-.54a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          (714) 963-2428
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE COVERAGE GAP EXPLAINER -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>What Your Health Plan Doesn't Cover</h2>
+      <p class="section-sub">Even with good health insurance, a serious illness or injury can leave you with bills your plan won't touch — and income you can't replace.</p>
+    </div>
+    <div class="compare-table-wrap">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>When You Get Hurt or Sick...</th>
+            <th>Standard Health Insurance</th>
+            <th>+ Supplemental Insurance</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Hospital stay costs (room, nursing, tests)</td>
+            <td>Partial — after deductible &amp; copays</td>
+            <td class="check-yes">✓ Cash benefit paid directly to you</td>
+          </tr>
+          <tr>
+            <td>Income lost while you recover</td>
+            <td class="check-no">✗ Not covered</td>
+            <td class="check-yes">✓ Short-term disability pays your bills</td>
+          </tr>
+          <tr>
+            <td>Transportation to/from treatment</td>
+            <td class="check-no">✗ Not covered</td>
+            <td class="check-yes">✓ Accident/cancer plan includes this</td>
+          </tr>
+          <tr>
+            <td>Childcare during your recovery</td>
+            <td class="check-no">✗ Not covered</td>
+            <td class="check-yes">✓ Benefits paid to you, use however needed</td>
+          </tr>
+          <tr>
+            <td>Cancer-specific treatments &amp; costs</td>
+            <td class="check-partial">~ Partially</td>
+            <td class="check-yes">✓ Cancer policy fills remaining gaps</td>
+          </tr>
+          <tr>
+            <td>Prescription deductibles &amp; out-of-pocket</td>
+            <td class="check-partial">~ Copays remain</td>
+            <td class="check-yes">✓ Benefits deposited directly to you</td>
+          </tr>
+          <tr>
+            <td>Your mortgage/rent while hospitalized</td>
+            <td class="check-no">✗ Not covered</td>
+            <td class="check-yes">✓ You decide how to use your cash benefits</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="text-align:center; color:var(--text-medium); font-size:.88rem; margin-top:16px;">Coverage details vary by policy. Contact us for a personalized review of your situation.</p>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-works">
+  <div class="container">
+    <h2>How Supplemental Insurance Works</h2>
+    <p class="section-sub">Simple in concept, powerful in practice. Your benefits are paid directly to you — not your doctor, not your hospital.</p>
+    <div class="steps-grid">
+      <div class="step-card animate-fade-up">
+        <div class="step-num">1</div>
+        <h4>A Covered Event Happens</h4>
+        <p>You're diagnosed with cancer, involved in an accident, hospitalized, or another covered event occurs.</p>
+      </div>
+      <div class="step-card animate-fade-up delay-1">
+        <div class="step-num">2</div>
+        <h4>You File a Simple Claim</h4>
+        <p>Submit documentation of the event. Aflac processes claims fast — often within days, not weeks.</p>
+      </div>
+      <div class="step-card animate-fade-up delay-2">
+        <div class="step-num">3</div>
+        <h4>Cash Paid Directly to You</h4>
+        <p>Your benefit is deposited directly to your bank account. No involvement from your doctor or hospital.</p>
+      </div>
+      <div class="step-card animate-fade-up delay-3">
+        <div class="step-num">4</div>
+        <h4>Use It However You Need</h4>
+        <p>Pay your rent, mortgage, groceries, gas, childcare — whatever helps your family stay stable while you recover.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REAL SCENARIOS -->
+<section class="section" style="background:var(--cream);">
+  <div class="container">
+    <div class="section-header">
+      <h2>Real Situations Where This Matters</h2>
+      <p class="section-sub">These aren't hypotheticals. They're the kinds of calls Lisa and Sean receive from families who wish they'd planned ahead.</p>
+    </div>
+    <div class="scenario-grid">
+      <div class="scenario-card animate-fade-up">
+        <div class="scenario-icon">🏥</div>
+        <h3>Unexpected Hospitalization</h3>
+        <p>Maria, 38, a teacher, slipped on a hiking trail and broke her hip. Her health insurance covered the surgery — but her 6-week recovery meant no paycheck. Her mortgage, car payment, and family expenses didn't pause.</p>
+        <div class="scenario-outcome">
+          With accident &amp; short-term disability coverage:
+          <span>Cash benefits helped cover 8 weeks of household expenses while she healed. Her family never fell behind.</span>
+        </div>
+      </div>
+      <div class="scenario-card animate-fade-up delay-1">
+        <div class="scenario-icon">🎗</div>
+        <h3>Cancer Diagnosis</h3>
+        <p>David, 51, a contractor, was diagnosed with colon cancer. Treatment meant months of reduced work capacity. His health insurance handled the medical bills — but the gas for 40 treatment drives, the lost jobs, the supplements, the fatigue? Those came out of savings.</p>
+        <div class="scenario-outcome">
+          With a cancer insurance policy:
+          <span>Lump-sum and ongoing benefits offset the financial side of treatment, letting him focus on recovery instead of bills.</span>
+        </div>
+      </div>
+      <div class="scenario-card animate-fade-up delay-2">
+        <div class="scenario-icon">❤️</div>
+        <h3>Heart Attack at 46</h3>
+        <p>Kevin, 46, had a heart attack while coaching his son's soccer team. He survived — but his 3-month cardiac rehab meant he couldn't work. His family had savings, but not three months' worth for a family of four.</p>
+        <div class="scenario-outcome">
+          With critical illness coverage:
+          <span>A lump-sum benefit was paid upon diagnosis. It covered exactly what health insurance couldn't: their life.</span>
+        </div>
+      </div>
+      <div class="scenario-card animate-fade-up delay-3">
+        <div class="scenario-icon">👩‍👧</div>
+        <h3>Young Family, Tight Budget</h3>
+        <p>Jessica, 29, and her husband just had their first baby. They have health insurance through his employer — but the deductible is $4,000. One ER visit with their infant wiped out their emergency fund.</p>
+        <div class="scenario-outcome">
+          With hospital indemnity &amp; accident coverage:
+          <span>Benefits paid directly helped rebuild savings and gave them confidence their growing family was protected.</span>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:48px;">
+      <p style="color:var(--text-medium); margin-bottom:24px; font-size:.95rem;">These stories are illustrative examples. Individual coverage, benefits, and outcomes vary by policy. Ask us what's right for your situation.</p>
+      <a href="contact.html" class="btn btn-primary btn-lg">Talk to Sean or Lisa — Free</a>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS FOR INDIVIDUALS -->
+<section class="section" style="background:#fff;">
+  <div class="container">
+    <div class="section-header">
+      <h2>Coverage Options for Individuals &amp; Families</h2>
+      <p class="section-sub">Every policy is explained in plain English before you sign anything. Here's a quick overview of what we offer.</p>
+    </div>
+    <div class="services-grid" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr));">
+      <div class="service-card animate-fade-up">
+        <div class="service-icon">🛡️</div>
+        <h3>Accident Insurance</h3>
+        <p>Pays benefits for injuries from covered accidents — ER visits, fractures, dislocations, burns, and more. Ideal for active families.</p>
+        <a href="services.html" class="service-link">Learn more →</a>
+      </div>
+      <div class="service-card animate-fade-up delay-1">
+        <div class="service-icon">🎗️</div>
+        <h3>Cancer Insurance</h3>
+        <p>Provides cash benefits upon cancer diagnosis and throughout treatment — covering costs your health plan won't touch.</p>
+        <a href="services.html" class="service-link">Learn more →</a>
+      </div>
+      <div class="service-card animate-fade-up delay-2">
+        <div class="service-icon">❤️‍🩹</div>
+        <h3>Critical Illness Insurance</h3>
+        <p>Lump-sum benefit paid upon diagnosis of heart attack, stroke, kidney failure, and other major illnesses. Use it any way you need.</p>
+        <a href="services.html" class="service-link">Learn more →</a>
+      </div>
+      <div class="service-card animate-fade-up">
+        <div class="service-icon">🏥</div>
+        <h3>Hospital Indemnity</h3>
+        <p>Daily/weekly cash benefits for each day you're hospitalized. Helps offset deductibles, copays, and the income you're not earning.</p>
+        <a href="services.html" class="service-link">Learn more →</a>
+      </div>
+      <div class="service-card animate-fade-up delay-1">
+        <div class="service-icon">📅</div>
+        <h3>Short-Term Disability</h3>
+        <p>Replaces a portion of your income when illness or injury prevents you from working. Your bills don't stop — your benefits don't either.</p>
+        <a href="services.html" class="service-link">Learn more →</a>
+      </div>
+      <div class="service-card animate-fade-up delay-2">
+        <div class="service-icon">👁️</div>
+        <h3>Dental, Vision &amp; Hearing</h3>
+        <p>Affordable standalone plans to cover what most health insurance skips. Preventive care, glasses, contacts, hearing aids, and more.</p>
+        <a href="services.html" class="service-link">Learn more →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO SHOULD CONSIDER THIS -->
+<section class="section" style="background:var(--cream);">
+  <div class="container">
+    <div class="two-col">
+      <div class="two-col-text animate-fade-up">
+        <h2>Is Supplemental Insurance Right for You?</h2>
+        <p>You might benefit from supplemental coverage if you answer yes to any of these:</p>
+        <ul class="check-list" style="margin-top:20px;">
+          <li>Do you have a high-deductible health plan (HDHP)?</li>
+          <li>Would a month without income create financial strain?</li>
+          <li>Do you have children or family members who depend on your earnings?</li>
+          <li>Is there a history of cancer or heart disease in your family?</li>
+          <li>Are you self-employed or an independent contractor?</li>
+          <li>Do you have less than 3 months of expenses saved as an emergency fund?</li>
+          <li>Are you active in sports, outdoor activities, or physical work?</li>
+        </ul>
+        <p style="margin-top:24px; color:var(--text-medium);">If you checked even one box, a conversation with Lisa or Sean costs nothing and could save you thousands.</p>
+        <div class="btn-group" style="margin-top:32px;">
+          <a href="contact.html" class="btn btn-primary">Schedule Free Consultation</a>
+          <a href="tel:7149632428" class="btn btn-outline">Call Us Now</a>
+        </div>
+      </div>
+      <div class="two-col-visual animate-fade-up delay-1">
+        <div class="profile-card" style="padding:40px 32px;">
+          <div style="font-size:3rem; margin-bottom:16px;">💬</div>
+          <h3 style="color:var(--navy); font-size:1.1rem; margin-bottom:12px;">"We're here to explain — not sell you something you don't need."</h3>
+          <p style="color:var(--text-medium); font-size:.9rem; line-height:1.65; margin-bottom:20px;">Our first conversation is about understanding your situation. If supplemental insurance makes sense for you, we'll explain exactly why. If it doesn't, we'll tell you that too.</p>
+          <div style="display:flex; align-items:center; gap:14px;">
+            <div class="profile-initials" style="width:44px; height:44px; font-size:.85rem;">LA</div>
+            <div>
+              <div style="font-weight:700; color:var(--navy); font-size:.9rem;">Lisa Arens</div>
+              <div style="color:var(--text-medium); font-size:.8rem;">35+ Years Insurance Experience</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-individual">
+  <div class="container">
+    <div class="section-header">
+      <h2>Common Questions</h2>
+      <p class="section-sub">Honest answers about how supplemental insurance works.</p>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">
+          Do I need supplemental insurance if I already have good health insurance?
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="faq-a">
+          Health insurance covers medical care. Supplemental insurance covers your life — the income you lose, the bills that don't stop, the costs that aren't medical. Even with excellent health coverage, most people face significant out-of-pocket expenses during a serious illness or injury. Supplemental policies pay cash directly to you to cover those gaps.
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">
+          Can I get supplemental insurance on my own, outside of my employer?
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="faq-a">
+          Yes. You don't need to get it through an employer. Individual and family supplemental plans are available regardless of your employment status. This is especially valuable for the self-employed, freelancers, part-time workers, and anyone whose employer doesn't offer these benefits.
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">
+          How affordable are these policies?
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="faq-a">
+          Supplemental insurance is designed to be affordable — many policies are available for less than a daily cup of coffee. The right plan depends on your age, health, lifestyle, and the level of coverage you want. We'll always show you options at different price points and explain the trade-offs clearly before you decide anything.
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">
+          Can I have multiple supplemental policies at the same time?
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="faq-a">
+          Yes. Many families carry 2–3 supplemental policies (for example, accident + critical illness + short-term disability) because they cover different risk scenarios. We'll help you understand which combination makes sense for your specific situation without over-insuring or under-insuring.
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">
+          What's the claims process like?
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="faq-a">
+          Much simpler than traditional health insurance claims. For most Aflac policies, you submit documentation of the covered event, and Aflac processes and pays your claim directly — often within days. There's no negotiating with hospitals, no waiting for reimbursement from your health insurer. The benefit is paid to you to use as you see fit.
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">
+          Does supplemental insurance replace health insurance?
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="faq-a">
+          No — supplemental insurance is designed to work alongside your existing health coverage, not replace it. It fills the financial gaps that health insurance leaves behind. If you also need help finding or optimizing your health insurance plan, Lisa and Sean can assist with that too.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA SECTION -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-content">
+      <h2>Ready to Find Out What You're Missing?</h2>
+      <p>A free 20-minute conversation with Lisa or Sean will show you exactly where your coverage has gaps — and what it would cost to fill them.</p>
+      <div class="btn-group">
+        <a href="contact.html" class="btn btn-primary btn-lg">Schedule Free Consultation</a>
+        <a href="tel:7149632428" class="btn btn-outline btn-lg" style="border-color:rgba(255,255,255,.4); color:#fff;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.28h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.29 6.29l.54-.54a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Call (714) 963-2428
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo-name">Arens Insurance</div>
+        <div class="footer-logo-tagline">Services LLC</div>
+        <p>Independent insurance advisors serving Huntington Beach and Orange County, CA. Supplemental insurance, employee benefits, health plans, and more.</p>
+        <p style="margin-top:12px"><a href="tel:7149632428" style="color:var(--amber);font-weight:600">(714) 963-2428</a></p>
+      </div>
+      <div class="footer-col">
+        <h5>Pages</h5>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Sean &amp; Lisa</a></li>
+          <li><a href="services.html">Our Services</a></li>
+          <li><a href="individuals.html">For Individuals</a></li>
+          <li><a href="businesses.html">For Businesses</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="services.html">Supplemental Insurance</a></li>
+          <li><a href="services.html">Accident Coverage</a></li>
+          <li><a href="services.html">Cancer Insurance</a></li>
+          <li><a href="services.html">Critical Illness</a></li>
+          <li><a href="services.html">Employee Benefits</a></li>
+          <li><a href="services.html">Group Health</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <ul>
+          <li style="color:rgba(255,255,255,.6)">Huntington Beach, CA</li>
+          <li style="color:rgba(255,255,255,.6)">Orange County, CA</li>
+          <li><a href="tel:7149632428">(714) 963-2428</a></li>
+          <li><a href="contact.html">Schedule Consultation</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-bottom-row">
+        <p>© 2025 Arens Insurance Services LLC. All rights reserved.</p>
+        <span class="footer-license">[CA License #XXXXXXX]</span>
+      </div>
+      <p class="footer-disclaimer">
+        Arens Insurance Services LLC is a licensed insurance agency in the state of California. [CA License #XXXXXXX]. Products, coverage, and availability vary by state and individual circumstances. This website is for informational purposes only and does not constitute a binding offer or guarantee of insurance coverage. Contact us directly to discuss your specific needs and obtain a personalized recommendation.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

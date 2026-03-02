@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | Arens Insurance Services</title>
+  <meta name="description" content="Connect with Sean and Lisa Arens for a free consultation on health insurance, employee benefits, and supplemental coverage in Huntington Beach and Orange County.">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* ── Page-specific styles ── */
+    .contact-hero {
+      background: linear-gradient(150deg, var(--navy) 0%, var(--navy-light) 100%);
+      padding: 100px 0 64px;
+      text-align: center;
+      color: var(--warm-white);
+    }
+    .contact-hero .overline { color: var(--amber-light); margin-bottom: 12px; }
+    .contact-hero h1 { font-size: clamp(2rem, 4vw, 2.75rem); margin-bottom: 16px; }
+    .contact-hero p { font-size: 1.1rem; color: rgba(255,255,255,0.78); max-width: 560px; margin: 0 auto; }
+
+    .dual-cta-section {
+      background: var(--cream);
+      padding: 80px 0;
+    }
+    .dual-cta-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    .cta-card {
+      background: var(--warm-white);
+      border-radius: var(--radius-lg);
+      padding: 48px 40px;
+      text-align: center;
+      box-shadow: var(--shadow-md);
+      border: 2px solid transparent;
+      transition: border-color var(--transition), transform var(--transition);
+    }
+    .cta-card:hover { border-color: var(--amber); transform: translateY(-4px); }
+    .cta-card .cta-icon {
+      width: 72px; height: 72px;
+      background: var(--amber-pale);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 24px;
+      font-size: 2rem;
+    }
+    .cta-card h3 { font-family: var(--font-display); font-size: 1.4rem; color: var(--navy); margin-bottom: 12px; }
+    .cta-card p { color: var(--text-mid); font-size: 0.95rem; margin-bottom: 28px; line-height: 1.6; }
+    .cta-card .btn-primary, .cta-card .btn-outline { width: 100%; justify-content: center; }
+    .cta-phone-number { font-family: var(--font-display); font-size: 1.5rem; color: var(--navy); font-weight: 700; }
+    .cta-subtext { font-size: 0.82rem; color: var(--text-light); margin-top: 8px; }
+
+    .contact-form-section {
+      padding: 80px 0;
+      background: var(--warm-white);
+    }
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 64px;
+      align-items: start;
+    }
+    .contact-info h2 { font-family: var(--font-display); font-size: 1.9rem; color: var(--navy); margin-bottom: 16px; }
+    .contact-info p { color: var(--text-mid); line-height: 1.7; margin-bottom: 32px; }
+    .info-item {
+      display: flex; gap: 16px; align-items: flex-start;
+      margin-bottom: 24px;
+    }
+    .info-icon {
+      width: 44px; height: 44px; min-width: 44px;
+      background: var(--amber-pale);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem;
+    }
+    .info-item h4 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-light); margin-bottom: 4px; }
+    .info-item p { color: var(--navy); font-weight: 600; font-size: 0.95rem; margin: 0; }
+    .info-item a { color: var(--navy); text-decoration: none; }
+    .info-item a:hover { color: var(--amber); }
+
+    .service-area-box {
+      background: var(--cream);
+      border-radius: var(--radius-md);
+      padding: 28px;
+      margin-top: 32px;
+    }
+    .service-area-box h4 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-light); margin-bottom: 12px; }
+    .area-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .area-tag {
+      background: var(--warm-white);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 4px 14px;
+      font-size: 0.82rem;
+      color: var(--text-mid);
+    }
+
+    .contact-form {
+      background: var(--cream);
+      border-radius: var(--radius-lg);
+      padding: 48px 40px;
+    }
+    .contact-form h3 { font-family: var(--font-display); font-size: 1.5rem; color: var(--navy); margin-bottom: 8px; }
+    .contact-form > p { color: var(--text-mid); font-size: 0.9rem; margin-bottom: 32px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-group { margin-bottom: 20px; }
+    .form-group.full-width { grid-column: 1 / -1; }
+    .form-group label { display: block; font-size: 0.82rem; font-weight: 600; color: var(--navy); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.04em; }
+    .form-group input, .form-group select, .form-group textarea {
+      width: 100%; padding: 12px 16px;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-sm);
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      color: var(--text-dark);
+      background: var(--warm-white);
+      transition: border-color var(--transition);
+      box-sizing: border-box;
+    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+      outline: none; border-color: var(--amber);
+    }
+    .form-group textarea { min-height: 120px; resize: vertical; }
+    .form-submit { width: 100%; padding: 16px; font-size: 1rem; margin-top: 8px; }
+    .form-disclaimer { font-size: 0.78rem; color: var(--text-light); margin-top: 12px; text-align: center; line-height: 1.5; }
+    .form-success {
+      display: none;
+      background: #d1fae5;
+      border: 1px solid #10b981;
+      border-radius: var(--radius-md);
+      padding: 24px;
+      text-align: center;
+      color: #065f46;
+    }
+    .form-success h4 { font-size: 1.1rem; margin-bottom: 8px; }
+
+    .availability-section {
+      background: var(--navy);
+      padding: 64px 0;
+      color: var(--warm-white);
+    }
+    .availability-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 2px;
+      background: rgba(255,255,255,0.08);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+    }
+    .avail-day {
+      background: var(--navy-mid);
+      padding: 28px 20px;
+      text-align: center;
+    }
+    .avail-day.closed { opacity: 0.5; }
+    .avail-day .day-name { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--amber-light); margin-bottom: 8px; }
+    .avail-day .day-hours { font-size: 0.95rem; font-weight: 600; }
+    .avail-day .day-note { font-size: 0.75rem; color: rgba(255,255,255,0.5); margin-top: 4px; }
+
+    .faq-section {
+      padding: 80px 0;
+      background: var(--cream);
+    }
+
+    @media (max-width: 768px) {
+      .dual-cta-grid { grid-template-columns: 1fr; }
+      .contact-layout { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .contact-form { padding: 32px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-inner container">
+      <a href="index.html" class="nav-logo">
+        <div class="logo-mark">AI</div>
+        <div class="logo-text">
+          <span class="logo-name">Arens Insurance</span>
+          <span class="logo-tagline">Services</span>
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="individuals.html">For Individuals</a></li>
+        <li><a href="businesses.html">For Businesses</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+      <a href="tel:7149632428" class="btn-primary nav-cta">
+        <span>📞</span> (714) 963-2428
+      </a>
+      <button class="mobile-menu-btn" aria-label="Open menu">☰</button>
+    </div>
+    <div class="mobile-menu">
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="individuals.html">For Individuals</a>
+      <a href="businesses.html">For Businesses</a>
+      <a href="contact.html">Contact</a>
+      <a href="tel:7149632428" class="btn-primary" style="margin-top:8px;">📞 (714) 963-2428</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="contact-hero">
+    <div class="container">
+      <p class="overline">Get In Touch</p>
+      <h1>Let's Talk About Your Coverage</h1>
+      <p>Sean and Lisa are ready to have a real conversation — no pressure, no jargon. Just honest guidance from people who genuinely care about your financial security.</p>
+    </div>
+  </section>
+
+  <!-- Dual CTA -->
+  <section class="dual-cta-section">
+    <div class="container">
+      <div class="section-header" style="margin-bottom: 48px;">
+        <p class="overline">Choose What Works for You</p>
+        <h2>Two Ways to Connect</h2>
+      </div>
+      <div class="dual-cta-grid">
+        <div class="cta-card">
+          <div class="cta-icon">📞</div>
+          <h3>Call Us Directly</h3>
+          <p>Pick up the phone and talk to Sean or Lisa directly. No automated systems, no runaround — real people who know insurance.</p>
+          <div class="cta-phone-number">(714) 963-2428</div>
+          <div class="cta-subtext">Monday–Friday, 9am–6pm</div>
+          <br>
+          <a href="tel:7149632428" class="btn-primary">Call Now</a>
+        </div>
+        <div class="cta-card">
+          <div class="cta-icon">📅</div>
+          <h3>Schedule a Consultation</h3>
+          <p>Prefer to plan ahead? Book a free 30-minute consultation at a time that works for you — phone or video, your choice.</p>
+          <p style="font-size:0.85rem; color: var(--text-light);">We'll come prepared with options tailored to your situation.</p>
+          <a href="#contact-form" class="btn-primary">Request Appointment</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Info + Form -->
+  <section class="contact-form-section" id="contact-form">
+    <div class="container">
+      <div class="contact-layout">
+        <!-- Left: info -->
+        <div class="contact-info">
+          <h2>Reach Sean &amp; Lisa</h2>
+          <p>We serve individuals, families, and businesses throughout Huntington Beach and the greater Orange County area. If you're unsure whether we can help, just ask — we'll point you in the right direction either way.</p>
+
+          <div class="info-item">
+            <div class="info-icon">📞</div>
+            <div>
+              <h4>Phone</h4>
+              <p><a href="tel:7149632428">(714) 963-2428</a></p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-icon">📍</div>
+            <div>
+              <h4>Mailing Address</h4>
+              <p>5904 A Warner Ave #127<br>Huntington Beach, CA 92649</p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-icon">✉️</div>
+            <div>
+              <h4>Email</h4>
+              <p><a href="mailto:info@areinsurance.net">info@areinsurance.net</a></p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-icon">⏰</div>
+            <div>
+              <h4>Available Hours</h4>
+              <p>Mon–Fri, 9am–6pm<br><span style="color: var(--text-light); font-size: 0.85rem; font-weight: 400;">Evenings & weekends by appointment</span></p>
+            </div>
+          </div>
+
+          <div class="service-area-box">
+            <h4>Service Area</h4>
+            <div class="area-tags">
+              <span class="area-tag">Huntington Beach</span>
+              <span class="area-tag">Fountain Valley</span>
+              <span class="area-tag">Costa Mesa</span>
+              <span class="area-tag">Newport Beach</span>
+              <span class="area-tag">Irvine</span>
+              <span class="area-tag">Long Beach</span>
+              <span class="area-tag">Garden Grove</span>
+              <span class="area-tag">Orange County</span>
+              <span class="area-tag">Greater LA</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: form -->
+        <div class="contact-form" id="inquiry-form">
+          <h3>Send Us a Message</h3>
+          <p>Tell us a bit about what you're looking for and we'll reach out within one business day.</p>
+
+          <div class="form-success" id="form-success">
+            <h4>✅ Message Received!</h4>
+            <p>Thank you — Sean or Lisa will be in touch within one business day. We look forward to speaking with you.</p>
+          </div>
+
+          <form id="contact-form-el" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fname">First Name *</label>
+                <input type="text" id="fname" name="fname" placeholder="Lisa" required>
+              </div>
+              <div class="form-group">
+                <label for="lname">Last Name *</label>
+                <input type="text" id="lname" name="lname" placeholder="Johnson" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" placeholder="you@email.com" required>
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="(714) 555-0000">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="inquiry-type">What can we help you with? *</label>
+              <select id="inquiry-type" name="inquiry-type" required>
+                <option value="">Select a topic...</option>
+                <option value="individual-health">Individual / Family Health Insurance</option>
+                <option value="supplemental">Supplemental Insurance (Aflac)</option>
+                <option value="employee-benefits">Employee Benefits for My Business</option>
+                <option value="group-health">Group Health Insurance</option>
+                <option value="medicare">Medicare / Senior Plans</option>
+                <option value="general">General Question</option>
+              </select>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="coverage-for">Coverage for</label>
+                <select id="coverage-for" name="coverage-for">
+                  <option value="">Select...</option>
+                  <option>Just myself</option>
+                  <option>Myself + spouse / partner</option>
+                  <option>Family with children</option>
+                  <option>Small business (1–10 employees)</option>
+                  <option>Medium business (11–50 employees)</option>
+                  <option>I'm not sure yet</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="best-time">Best time to reach you</label>
+                <select id="best-time" name="best-time">
+                  <option value="">Any time</option>
+                  <option>Morning (9am–12pm)</option>
+                  <option>Afternoon (12pm–4pm)</option>
+                  <option>Late afternoon (4pm–6pm)</option>
+                  <option>Evening (by appointment)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Anything else you'd like us to know</label>
+              <textarea id="message" name="message" placeholder="Your current coverage situation, specific questions, or anything that would help us prepare for our conversation..."></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary form-submit">Send Message →</button>
+            <p class="form-disclaimer">Your information is kept private and never sold. By submitting, you agree to be contacted by Arens Insurance Services regarding your inquiry.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Availability -->
+  <section class="availability-section">
+    <div class="container">
+      <div class="section-header" style="margin-bottom: 40px;">
+        <p class="overline" style="color: var(--amber-light);">When We're Available</p>
+        <h2 style="color: var(--warm-white);">Our Hours</h2>
+      </div>
+      <div class="availability-grid">
+        <div class="avail-day">
+          <div class="day-name">Monday</div>
+          <div class="day-hours">9am – 6pm</div>
+        </div>
+        <div class="avail-day">
+          <div class="day-name">Tuesday</div>
+          <div class="day-hours">9am – 6pm</div>
+        </div>
+        <div class="avail-day">
+          <div class="day-name">Wednesday</div>
+          <div class="day-hours">9am – 6pm</div>
+        </div>
+        <div class="avail-day">
+          <div class="day-name">Thursday</div>
+          <div class="day-hours">9am – 6pm</div>
+        </div>
+        <div class="avail-day">
+          <div class="day-name">Friday</div>
+          <div class="day-hours">9am – 6pm</div>
+        </div>
+        <div class="avail-day closed">
+          <div class="day-name">Saturday</div>
+          <div class="day-hours">By Appt.</div>
+          <div class="day-note">Call to arrange</div>
+        </div>
+        <div class="avail-day closed">
+          <div class="day-name">Sunday</div>
+          <div class="day-hours">Closed</div>
+        </div>
+      </div>
+      <p style="text-align: center; color: rgba(255,255,255,0.6); margin-top: 24px; font-size: 0.9rem;">Need to connect outside regular hours? Leave a message and we'll call you back the next business day.</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section">
+    <div class="container">
+      <div class="section-header">
+        <p class="overline">Common Questions</p>
+        <h2>Before You Reach Out</h2>
+      </div>
+      <div class="faq-list" style="max-width: 760px; margin: 0 auto;">
+        <div class="faq-item">
+          <button class="faq-question">Is the consultation really free? <span class="faq-icon">+</span></button>
+          <div class="faq-answer"><p>Yes, completely. We believe you should be able to explore your options without financial pressure. Our consultations are always free, with no obligation to purchase anything.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Do I need to know what I want before calling? <span class="faq-icon">+</span></button>
+          <div class="faq-answer"><p>Not at all. Many of our best conversations start with "I don't even know where to begin." We'll ask the right questions and guide you through the options that actually make sense for your situation.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Do you serve clients outside Huntington Beach? <span class="faq-icon">+</span></button>
+          <div class="faq-answer"><p>Yes. We serve clients throughout Orange County and greater Los Angeles. We're licensed in California and can work with most individuals and businesses across the state. Phone and video consultations make geography a non-issue.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">How quickly can I get coverage? <span class="faq-icon">+</span></button>
+          <div class="faq-answer"><p>It depends on the type of coverage. Some supplemental policies can be in force within days of approval. Health insurance enrollment depends on qualifying life events and open enrollment periods. We'll give you an honest timeline during your consultation.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Can you help my employees understand their benefits? <span class="faq-icon">+</span></button>
+          <div class="faq-answer"><p>Absolutely — this is one of the things we do best. We can conduct on-site or virtual enrollment sessions, explain options in plain language, and make sure your team actually understands and uses the benefits you're providing.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner container">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <div class="logo-mark small">AI</div>
+          <div class="logo-text">
+            <span class="logo-name">Arens Insurance</span>
+            <span class="logo-tagline">Services</span>
+          </div>
+        </div>
+        <p class="footer-tagline">35 years of expertise. One family committed to yours.</p>
+        <a href="tel:7149632428" class="footer-phone">(714) 963-2428</a>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h5>Services</h5>
+          <a href="services.html#supplemental">Supplemental Insurance</a>
+          <a href="services.html#employee-benefits">Employee Benefits</a>
+          <a href="services.html#health">Health Insurance</a>
+          <a href="services.html#group">Group Health</a>
+        </div>
+        <div class="footer-col">
+          <h5>Who We Serve</h5>
+          <a href="individuals.html">Individuals & Families</a>
+          <a href="businesses.html">Small Businesses</a>
+          <a href="services.html#medicare">Medicare Recipients</a>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <a href="about.html">About Sean & Lisa</a>
+          <a href="contact.html">Contact Us</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom container">
+      <p>© 2025 Arens Insurance Services LLC. All rights reserved. | CA License #[XXXXXXX] | Products and availability vary by state. This website provides general information only and does not constitute insurance advice or a binding offer of coverage.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Contact form handling
+    document.getElementById('contact-form-el').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const fname = document.getElementById('fname').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const type = document.getElementById('inquiry-type').value;
+      if (!fname || !email || !type) {
+        alert('Please fill in your name, email, and inquiry type.');
+        return;
+      }
+      document.getElementById('contact-form-el').style.display = 'none';
+      document.getElementById('form-success').style.display = 'block';
+    });
+  </script>
+</body>
+</html>

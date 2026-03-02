@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Employee benefits and group insurance for small businesses in Huntington Beach & Orange County. Arens Insurance Services helps you attract, retain, and protect your team.">
+  <title>For Businesses | Arens Insurance Services</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .biz-why-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:24px; margin-top:48px; }
+    .biz-why-card { background:#fff; border-radius:14px; padding:28px; box-shadow:0 4px 16px rgba(11,31,58,.08); display:flex; gap:18px; align-items:flex-start; }
+    .biz-why-icon { font-size:2rem; flex-shrink:0; }
+    .biz-why-card h4 { color:var(--navy); font-size:1rem; margin-bottom:8px; }
+    .biz-why-card p { color:var(--text-medium); font-size:.88rem; line-height:1.6; }
+
+    .stat-highlight { background:var(--navy); color:#fff; padding:72px 0; }
+    .stat-highlight h2 { color:#fff; text-align:center; }
+    .stat-highlight .section-sub { color:rgba(255,255,255,.7); text-align:center; max-width:640px; margin:0 auto 48px; }
+    .stat-row { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:32px; }
+    .stat-box { text-align:center; background:rgba(255,255,255,.07); border-radius:14px; padding:32px 20px; }
+    .stat-box .stat-num { font-family:'Playfair Display',serif; font-size:2.6rem; color:var(--amber); font-weight:700; display:block; margin-bottom:8px; }
+    .stat-box p { color:rgba(255,255,255,.75); font-size:.88rem; line-height:1.5; }
+
+    .process-timeline { position:relative; padding-left:40px; margin-top:40px; }
+    .process-timeline::before { content:''; position:absolute; left:14px; top:0; bottom:0; width:2px; background:linear-gradient(to bottom, var(--amber), rgba(200,148,26,.2)); }
+    .process-step { position:relative; margin-bottom:36px; }
+    .process-step:last-child { margin-bottom:0; }
+    .process-dot { position:absolute; left:-40px; top:4px; width:28px; height:28px; border-radius:50%; background:var(--amber); border:3px solid #fff; box-shadow:0 0 0 2px var(--amber); display:flex; align-items:center; justify-content:center; font-size:.7rem; font-weight:800; color:var(--navy); }
+    .process-step h4 { color:var(--navy); font-size:1.02rem; margin-bottom:6px; }
+    .process-step p { color:var(--text-medium); font-size:.9rem; line-height:1.6; }
+
+    .benefit-types { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:24px; margin-top:40px; }
+    .benefit-type { background:var(--cream); border-radius:14px; padding:28px; border-left:4px solid var(--amber); }
+    .benefit-type h4 { color:var(--navy); font-size:1rem; margin-bottom:10px; }
+    .benefit-type ul { list-style:none; padding:0; margin:0; }
+    .benefit-type ul li { color:var(--text-medium); font-size:.88rem; padding:5px 0; border-bottom:1px solid rgba(0,0,0,.06); display:flex; gap:8px; align-items:flex-start; }
+    .benefit-type ul li::before { content:'→'; color:var(--amber); font-weight:700; flex-shrink:0; }
+    .benefit-type ul li:last-child { border-bottom:none; }
+
+    .sean-advantage { background:var(--cream); padding:80px 0; }
+    .advantage-card { background:#fff; border-radius:20px; padding:48px; box-shadow:0 8px 32px rgba(11,31,58,.1); max-width:900px; margin:0 auto; }
+    .advantage-card h3 { color:var(--navy); font-size:1.4rem; margin-bottom:16px; }
+    .advantage-metrics { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:20px; margin-top:32px; padding-top:32px; border-top:1px solid #e8e2d9; }
+    .advantage-metric { text-align:center; }
+    .advantage-metric .num { font-family:'Playfair Display',serif; font-size:2rem; color:var(--amber); font-weight:700; display:block; }
+    .advantage-metric p { font-size:.8rem; color:var(--text-medium); margin-top:4px; }
+
+    .size-cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:24px; margin-top:40px; }
+    .size-card { background:#fff; border-radius:16px; padding:32px 28px; box-shadow:0 4px 16px rgba(11,31,58,.08); }
+    .size-badge { display:inline-block; background:var(--amber); color:var(--navy); font-size:.75rem; font-weight:700; padding:4px 12px; border-radius:20px; margin-bottom:16px; }
+    .size-card h4 { color:var(--navy); font-size:1.05rem; margin-bottom:10px; }
+    .size-card p { color:var(--text-medium); font-size:.88rem; line-height:1.6; margin-bottom:16px; }
+    .size-card ul { list-style:none; padding:0; margin:0; }
+    .size-card ul li { font-size:.85rem; color:var(--text-medium); padding:4px 0; display:flex; gap:8px; }
+    .size-card ul li::before { content:'✓'; color:#1a7a4a; font-weight:700; flex-shrink:0; }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo">
+      <span class="nav-logo-name">Arens Insurance</span>
+      <span class="nav-logo-tagline">Huntington Beach, CA</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="individuals.html">For Individuals</a>
+      <a href="businesses.html" class="active">For Businesses</a>
+      <a href="contact.html" class="nav-cta">Schedule Free Consult</a>
+    </div>
+    <button class="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="container">
+    <div class="page-hero-content animate-fade-up">
+      <span class="hero-eyebrow">For Small &amp; Mid-Sized Businesses</span>
+      <h1>Benefits That Help You<br><em>Win the Talent You Want</em></h1>
+      <p>Small businesses compete against large companies for the same employees. A smart benefits package — at the right price point — can be your edge. Sean and Lisa help Orange County employers build programs that attract, retain, and protect their people.</p>
+      <div class="btn-group">
+        <a href="contact.html" class="btn btn-primary btn-lg">Get a Group Quote</a>
+        <a href="tel:7149632428" class="btn btn-outline btn-lg">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.28h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.29 6.29l.54-.54a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          (714) 963-2428
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY BENEFITS MATTER -->
+<section class="stat-highlight">
+  <div class="container">
+    <h2>The Business Case for Employee Benefits</h2>
+    <p class="section-sub">Benefits aren't just a nice-to-have. They're a competitive tool — and often more cost-effective than you think.</p>
+    <div class="stat-row">
+      <div class="stat-box animate-fade-up">
+        <span class="stat-num">78%</span>
+        <p>of employees say benefits are a major factor in accepting or staying in a job</p>
+      </div>
+      <div class="stat-box animate-fade-up delay-1">
+        <span class="stat-num">$0</span>
+        <p>direct cost for voluntary benefits — employees pay premiums through payroll deduction</p>
+      </div>
+      <div class="stat-box animate-fade-up delay-2">
+        <span class="stat-num">33%</span>
+        <p>average cost of replacing an employee (salary + training + lost productivity)</p>
+      </div>
+      <div class="stat-box animate-fade-up delay-3">
+        <span class="stat-num">2x</span>
+        <p>more likely to stay: employees with benefits report higher job satisfaction and loyalty</p>
+      </div>
+    </div>
+    <p style="text-align:center; color:rgba(255,255,255,.5); font-size:.8rem; margin-top:32px;">Statistics are industry estimates for informational purposes. Individual results vary.</p>
+  </div>
+</section>
+
+<!-- THE SEAN ADVANTAGE -->
+<section class="sean-advantage">
+  <div class="container">
+    <div class="advantage-card animate-fade-up">
+      <div style="display:flex; gap:20px; align-items:flex-start; flex-wrap:wrap; margin-bottom:28px;">
+        <div class="profile-initials" style="width:64px; height:64px; font-size:1.1rem; flex-shrink:0;">SA</div>
+        <div>
+          <h3>Why Our Business Clients Get a Different Level of Service</h3>
+          <p style="color:var(--text-medium); font-size:.95rem; line-height:1.65;">Before co-founding Arens Insurance Services, Sean spent 12 years in the aerospace and insurance industries — first as Production Manager at Zodiac Aerospace, then as Aflac Agent, District Sales Coordinator, and VP of Sales. He knows what operations, accountability, and delivery look like at the highest level. That's how he runs your enrollment.</p>
+        </div>
+      </div>
+      <p style="color:var(--text-medium); font-size:.9rem; line-height:1.7; margin-bottom:28px;">When Sean ran production at Zodiac Aerospace, he took on-time delivery from under 40% to 99% in nine months. He applies that same operational rigor to managing benefits enrollment — communication plans, employee education sessions, paperwork done right the first time, and no dropped balls.</p>
+      <div class="advantage-metrics">
+        <div class="advantage-metric">
+          <span class="num">&lt;40%→99%</span>
+          <p>On-time delivery improvement, Zodiac Aerospace</p>
+        </div>
+        <div class="advantage-metric">
+          <span class="num">12+</span>
+          <p>Years running group benefits and enrollment programs</p>
+        </div>
+        <div class="advantage-metric">
+          <span class="num">VP</span>
+          <p>Former VP of Sales & Group Health Director</p>
+        </div>
+        <div class="advantage-metric">
+          <span class="num">Aflac</span>
+          <p>Licensed agent with direct carrier access and support</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFIT TYPES -->
+<section class="section" style="background:#fff;">
+  <div class="container">
+    <div class="section-header">
+      <h2>What We Help You Offer Your Team</h2>
+      <p class="section-sub">From zero-cost voluntary benefits to comprehensive group health, we build the right combination for your budget and your people.</p>
+    </div>
+    <div class="benefit-types">
+      <div class="benefit-type animate-fade-up">
+        <h4>🆓 Voluntary Benefits (No Direct Cost to You)</h4>
+        <ul>
+          <li>Accident insurance</li>
+          <li>Cancer insurance</li>
+          <li>Critical illness coverage</li>
+          <li>Hospital indemnity</li>
+          <li>Short-term disability</li>
+          <li>Life insurance</li>
+          <li>Dental, vision &amp; hearing</li>
+        </ul>
+      </div>
+      <div class="benefit-type animate-fade-up delay-1">
+        <h4>🏥 Group Health Insurance</h4>
+        <ul>
+          <li>Group medical plans</li>
+          <li>Health Maintenance Organization (HMO)</li>
+          <li>Preferred Provider Organization (PPO)</li>
+          <li>High-deductible plans with HSA</li>
+          <li>Covered California SHOP marketplace</li>
+          <li>Multi-carrier comparisons</li>
+        </ul>
+      </div>
+      <div class="benefit-type animate-fade-up delay-2">
+        <h4>📦 Supplemental Add-Ons</h4>
+        <ul>
+          <li>Gap coverage for high deductibles</li>
+          <li>Employer-sponsored accident plans</li>
+          <li>Critical illness top-up coverage</li>
+          <li>Employee assistance programs</li>
+          <li>Worksite wellness benefits</li>
+          <li>Portable individual plans for employees</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BY COMPANY SIZE -->
+<section class="section" style="background:var(--cream);">
+  <div class="container">
+    <div class="section-header">
+      <h2>Solutions for Every Size Business</h2>
+      <p class="section-sub">Whether you have 2 employees or 200, there's a benefits approach that works for you.</p>
+    </div>
+    <div class="size-cards">
+      <div class="size-card animate-fade-up">
+        <div class="size-badge">Solo &amp; 1–4 Employees</div>
+        <h4>Getting Started</h4>
+        <p>Even the smallest team deserves protection. We help sole proprietors and micro-businesses access individual and small group options that make financial sense.</p>
+        <ul>
+          <li>Individual supplemental plans</li>
+          <li>Voluntary programs with no employer contribution</li>
+          <li>Individual health plan guidance</li>
+          <li>Self-employed income protection</li>
+        </ul>
+      </div>
+      <div class="size-card animate-fade-up delay-1">
+        <div class="size-badge">5–25 Employees</div>
+        <h4>Building Your Benefits Foundation</h4>
+        <p>The sweet spot for voluntary benefits. No required employer contribution, but employees gain access to group rates and the security that reduces turnover.</p>
+        <ul>
+          <li>Voluntary benefit enrollment programs</li>
+          <li>Group health plan options</li>
+          <li>On-site enrollment meetings</li>
+          <li>Employee education materials</li>
+        </ul>
+      </div>
+      <div class="size-card animate-fade-up delay-2">
+        <div class="size-badge">25–200+ Employees</div>
+        <h4>Comprehensive Group Programs</h4>
+        <p>Sean's background in district sales coordination and VP-level group health management gives you direct access to someone who has built and managed programs at this scale.</p>
+        <ul>
+          <li>Full benefits package design</li>
+          <li>Multi-carrier competitive bids</li>
+          <li>Open enrollment management</li>
+          <li>Ongoing HR support &amp; renewals</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE ENROLLMENT PROCESS -->
+<section class="section" style="background:#fff;">
+  <div class="container">
+    <div class="two-col">
+      <div class="two-col-text animate-fade-up">
+        <h2>How the Enrollment Process Works</h2>
+        <p>We handle the heavy lifting. Your job is to show up — we'll take it from there.</p>
+        <div class="process-timeline" style="margin-top:36px;">
+          <div class="process-step">
+            <div class="process-dot">1</div>
+            <h4>Free Consultation &amp; Needs Assessment</h4>
+            <p>We learn your business: how many employees, current benefits (if any), budget, and goals. No commitment, no pressure.</p>
+          </div>
+          <div class="process-step">
+            <div class="process-dot">2</div>
+            <h4>We Build Your Options</h4>
+            <p>Sean and Lisa put together a tailored benefits menu — comparing carriers, coverage levels, and costs to match your team and budget.</p>
+          </div>
+          <div class="process-step">
+            <div class="process-dot">3</div>
+            <h4>Employee Education Sessions</h4>
+            <p>We meet with your team — in person when possible — to explain benefits clearly in plain language. No jargon. We answer every question.</p>
+          </div>
+          <div class="process-step">
+            <div class="process-dot">4</div>
+            <h4>Enrollment &amp; Setup</h4>
+            <p>We manage the paperwork, applications, and carrier coordination. Employees are enrolled accurately and on time.</p>
+          </div>
+          <div class="process-step">
+            <div class="process-dot">5</div>
+            <h4>Ongoing Support &amp; Renewal</h4>
+            <p>We're not just here for the sale. We handle questions, changes, and annual renewals — so your benefits stay current and competitive.</p>
+          </div>
+        </div>
+      </div>
+      <div class="two-col-visual animate-fade-up delay-1">
+        <div class="profile-card" style="padding:36px 32px; background:var(--navy); color:#fff;">
+          <div style="font-size:2.5rem; margin-bottom:16px;">🏢</div>
+          <h3 style="color:#fff; font-size:1.15rem; margin-bottom:14px;">Why Small Businesses Choose Voluntary Benefits First</h3>
+          <p style="color:rgba(255,255,255,.75); font-size:.9rem; line-height:1.7; margin-bottom:20px;">For many small businesses, the question isn't "should we offer benefits?" — it's "how do we afford to?" Voluntary benefits are the answer. Employees pay the premium themselves through payroll deduction. You provide access to group rates and the carrier. Your cost: $0.</p>
+          <p style="color:rgba(255,255,255,.75); font-size:.9rem; line-height:1.7; margin-bottom:24px;">Your employees get better coverage than they could buy on their own. You get the retention and recruitment advantage of a benefits package. That's a win most business owners don't realize is available to them.</p>
+          <a href="contact.html" class="btn btn-primary">Learn How It Works</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY ARENS -->
+<section class="section" style="background:var(--cream);">
+  <div class="container">
+    <div class="section-header">
+      <h2>Why Orange County Businesses Work With Us</h2>
+    </div>
+    <div class="biz-why-grid">
+      <div class="biz-why-card animate-fade-up">
+        <div class="biz-why-icon">🎯</div>
+        <div>
+          <h4>Independent = Unbiased</h4>
+          <p>We're not captive to one carrier. We shop the market and recommend what's actually best for your team — not what pays us the highest commission.</p>
+        </div>
+      </div>
+      <div class="biz-why-card animate-fade-up delay-1">
+        <div class="biz-why-icon">⚙️</div>
+        <div>
+          <h4>Operational Precision</h4>
+          <p>Sean's aerospace background means zero tolerance for dropped details. Enrollment runs on time, applications are correct, and communication doesn't fall through the cracks.</p>
+        </div>
+      </div>
+      <div class="biz-why-card animate-fade-up delay-2">
+        <div class="biz-why-icon">📞</div>
+        <div>
+          <h4>You Have a Person, Not a Portal</h4>
+          <p>When your employee has a claim question at 5:30pm, they call Sean or Lisa — not a 1-800 number and a hold queue. That's the difference of working with us.</p>
+        </div>
+      </div>
+      <div class="biz-why-card animate-fade-up">
+        <div class="biz-why-icon">🤝</div>
+        <div>
+          <h4>35+ Years of Combined Expertise</h4>
+          <p>Lisa started in insurance in 1982. Between them, Sean and Lisa have seen every type of group benefits situation. You benefit from that depth.</p>
+        </div>
+      </div>
+      <div class="biz-why-card animate-fade-up delay-1">
+        <div class="biz-why-icon">💰</div>
+        <div>
+          <h4>Often $0 Additional Cost</h4>
+          <p>Voluntary benefits programs frequently carry no direct cost to the employer. We'll show you the exact numbers before you commit to anything.</p>
+        </div>
+      </div>
+      <div class="biz-why-card animate-fade-up delay-2">
+        <div class="biz-why-icon">📈</div>
+        <div>
+          <h4>Long-Term Partnership</h4>
+          <p>We review your program annually, adapt as your team grows, and manage renewals. Think of us as your benefits department — without the overhead.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA SECTION -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-content">
+      <h2>Let's Build Something Your Team Will Thank You For</h2>
+      <p>A free 30-minute consultation will show you exactly what's possible for your team — and what it costs. Most employers are surprised by how affordable a strong program can be.</p>
+      <div class="btn-group">
+        <a href="contact.html" class="btn btn-primary btn-lg">Schedule Free Consultation</a>
+        <a href="tel:7149632428" class="btn btn-outline btn-lg" style="border-color:rgba(255,255,255,.4); color:#fff;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.28h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.29 6.29l.54-.54a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Call (714) 963-2428
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo-name">Arens Insurance</div>
+        <div class="footer-logo-tagline">Services LLC</div>
+        <p>Independent insurance advisors serving Huntington Beach and Orange County, CA. Supplemental insurance, employee benefits, health plans, and more.</p>
+        <p style="margin-top:12px"><a href="tel:7149632428" style="color:var(--amber);font-weight:600">(714) 963-2428</a></p>
+      </div>
+      <div class="footer-col">
+        <h5>Pages</h5>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Sean &amp; Lisa</a></li>
+          <li><a href="services.html">Our Services</a></li>
+          <li><a href="individuals.html">For Individuals</a></li>
+          <li><a href="businesses.html">For Businesses</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="services.html">Supplemental Insurance</a></li>
+          <li><a href="services.html">Accident Coverage</a></li>
+          <li><a href="services.html">Cancer Insurance</a></li>
+          <li><a href="services.html">Critical Illness</a></li>
+          <li><a href="services.html">Employee Benefits</a></li>
+          <li><a href="services.html">Group Health</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <ul>
+          <li style="color:rgba(255,255,255,.6)">Huntington Beach, CA</li>
+          <li style="color:rgba(255,255,255,.6)">Orange County, CA</li>
+          <li><a href="tel:7149632428">(714) 963-2428</a></li>
+          <li><a href="contact.html">Schedule Consultation</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-bottom-row">
+        <p>© 2025 Arens Insurance Services LLC. All rights reserved.</p>
+        <span class="footer-license">[CA License #XXXXXXX]</span>
+      </div>
+      <p class="footer-disclaimer">
+        Arens Insurance Services LLC is a licensed insurance agency in the state of California. [CA License #XXXXXXX]. Products, coverage, and availability vary by state and individual circumstances. This website is for informational purposes only and does not constitute a binding offer or guarantee of insurance coverage. Contact us directly to discuss your specific needs and obtain a personalized recommendation.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
